@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+:root{
+	/* color */
+	--cl-red-main: #FF3951;
+	--cl-blue-main: #407CFF;
+
+	/* color neutro */
+	--cl-black: #141415;
+	--cl-grey-dark-card: #1D1E1F;
+	--cl-grey-ligth: #9799B1;
+	--cl-grey-ligth-back: #f5f6fc;
+	--cl-white: #ffffff;
+	
+	/* color glow */
+	--cl-glow-red: rgba(255, 57, 87, 0.4);
+	--cl-glow-blue: rgba(64, 124, 255, 0.5);
+	--cl-glow-greylight: #EFF0F7;
+	--cl-glow-greydark: #121212;
+
+	/* font size */
+	--fs-1-hero: 80px;
+	--fs-2-project-title: 60px;
+	--fs-3-legend: 40px;
+	--fs-4-titles: 36px;
+	--fs-5-body: 20px;
+	--fs-6-button: 16px;
+	--fs-7-logo: 30px;
+
+	/* font weigth */
+	--fw-regular: 400;
+	--fw-bold: 700;
+
+	/* propierties */
+	--shadow: 0px 10px 30px 0px;
+	--border-radius: 40px;
+	--line-height: 1.75;
+
+	--btn-1-width: 200px;
+	--btn-1-heigh: 70px;
+	
+	--btn-2-width: 120px;
+	--btn-2-heigh: 55px;
+}
+
+
+/* ------------------------- Global */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+body{
+	width: 1000px;
+	margin: auto;
+}
+button{
+	/* button */
+	width: var(--btn-1-width);
+	height: var(--btn-1-heigh);
+	border-radius: var(--border-radius);
+	border: none;
+	cursor: pointer;
+	/* color */
+	background-color: var(--cl-red-main);
+	color: var(--cl-white); /* -----------*/
+	/* font */
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-bold);
+}
+button:hover{
+	box-shadow: var(--shadow) var(--cl-glow-red);
+}
+.btn--s{
+	width: var(--btn-2-width);
+	height: var(--btn-2-heigh);
+}
+.btn--white{
+	/* color */
+	background-color: var(--cl-white);
+	color: var(--cl-red-main);
+}
+.btn--white:hover{
+	color: var(--cl-grey-ligth);
+	box-shadow: none;
+}
+
+
+/* ------------------------- Mediaquery */
+
+
+.header,
+.hero,
+.sandbox,
+.gallery,
+.blame,
+.footer,
+.mobile{
+	/* display: none; */
+}
+
+
+/* ------------------------- Header */
+.header{
+	border: 1px solid red;
+	display: flex;
+}
+/* .header__logo{
+
+} */
+.header__logo-image{
+	width: 25px;
+}
+.header__logo-text{
+	color: var(--cl-black);
+	font-size: var(--fs-7-logo);
+	font-weight: var(--fw-bold);
+}
+.header__switcher{
+	color: var(--cl-black);
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-bold);
+}
+/* .header__switcher-toggle{
+
+} */
+
+
+
+/* ------------------------- Hero */
+.hero{
+	border: 1px solid green;
+}
+.hero__title{
+	color: var(--cl-black);
+	font-size: var(--fs-1-hero);
+	font-weight: var(--fw-bold);
+}
+.hero__descr{
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-5-body);
+	font-weight: var(--fw-regular);
+	line-height: var(--line-height);
+	width: 358px;
+}
+/* .hero__descr--1{
+
+} */
+/* .hero__descr--2{
+
+} */
+/* .hero__descr--3{
+
+} */
+/* .hero__button{
+
+} */
+
+
+
+/* ------------------------- Sandbox */
+.sandbox{
+	border: 1px solid red;
+}
+.sandbox__legend{
+	color: var(--cl-black);
+	font-size: var(--fs-3-legend);
+	font-weight: var(--fw-bold);
+	width: 165px;
+}
+.sandbox__name{
+	color: var(--cl-black);
+	font-size: var(--fs-2-project-title);
+	font-weight: var(--fw-bold);
+}
+/* .sandbox__buton{
+
+} */
+.sandbox__iframe{
+	width: 1100px;
+  height: 700px;
+  border-radius: var(--border-radius);
+  background-color: var(--cl-grey-ligth-back);
+}
+
+
+/* ------------------------- Gallery */
+.gallery{
+	border: 1px solid blue;
+}
+.gallery__card{
+  width: 300px;
+  height: 425px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow) var(--cl-glow-greylight);
+  background-color: var(--cl-white);
+}
+.gallery__card:hover{
+	box-shadow: var(--shadow) var(--cl-glow-red);
+}
+.gallery__card-title{
+	color: var(--cl-black);
+	font-size: var(--fs-4-titles);
+	font-weight: var(--fw-bold);
+}
+/* .gallery__card-play{
+
+} */
+/* .gallery__card-modal{
+
+} */
+.gallery__card-empty{
+	width: 180px;
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-5-body);
+	font-weight: var(--fw-regular);
+}
+
+
+
+/* ------------------------- Contact */
+.blame{
+	width: 1100px;
+  height: 220px;
+	padding: 50px 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--cl-red-main);
+}
+.blame__title{
+	width: 275px;
+	color: var(--cl-white);
+	font-size: var(--fs-4-titles);
+	font-weight: var(--fw-bold);
+}
+/* .blame__button{
+
+} */
+
+
+
+/* ------------------------- Footer */
+.footer{
+	background-color: var(--cl-grey-ligth-back);
+}
+.footer__card{
+	width: 480px;
+  height: 215px;
+	padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow) var(--cl-glow-greylight);
+  background-color: #ffffff;
+}
+.footer__card-image img{
+	width: 80px;
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow) var(--cl-glow-greylight);
+}
+/* .footer__card-info{
+
+} */
+.footer__card-info--title{
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-5-body);
+	font-weight: var(--fw-bold);
+}
+.footer__card-info--job{
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-regular);
+}
+/* .footer__card-info--links{
+} */
+.footer__card-info--links a{
+	text-decoration: none;
+	color: var(--cl-grey-ligth);
+}
+.footer__card-info--links a:hover{
+	color: var(--cl-red-main);
+	font-weight: var(--fw-bold);
+}
+/* .footer__spam{
+} */
+/* .footer__spam-desc{
+} */
+.footer__spam-desc-title{
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-5-body);
+	font-weight: var(--fw-bold);
+}
+.footer__spam-desc-body{
+	color: var(--cl-grey-ligth);
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-regular);
+}
+.footer__spam-form{
+
+}
+.footer__spam-form input{
+	/* box */
+  width: 400px;
+  height: var(--btn-1-heigh);
+	padding-left: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow) var(--cl-glow-greylight);
+  background-color:var(--cl-white);
+	border:none;
+	/* color */
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-regular);
+}
+.footer__spam-form input:focus{
+	outline: none;
+	box-shadow: var(--shadow) var(--cl-glow-red);
+
+}
+
+
+
+/* ------------------------- Botón flotante */
+.floating{
+	border: 1px solid blue;
+
+}
+
+.floating__button{
+	width: 90px;
+	height: 90px;
+	border-radius: 30px;
+	background-color: var(--cl-blue-main);
+	box-shadow: var(--shadow) var(--cl-glow-blue);
+}
+
+.floating__box{
+	/* box */
+  width: 300px;
+  height: 230px;
+  padding: 36px;
+  border-radius: 30px;
+	background-color: var(--cl-blue-main);
+	box-shadow: var(--shadow) var(--cl-glow-blue);
+}
+
+.floating__box-message{
+	width: 100px;
+	font-size: var(--fs-4-titles);
+	font-weight: var(--fw-bold);
+	color: var(--cl-white);
+}
+
+/* ------------------------- Mobile */

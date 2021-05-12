@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1280*800-Desktop-Copy-2" transform="translate(-381.000000, -1446.000000)" fill="#C8E0FF">
+            <g id="Group-2" transform="translate(381.332738, 1446.832738)">
+                <g id="Group-Copy" transform="translate(1.667262, 2.167262)">
+                    <circle id="Oval-Copy-2" cx="19.5" cy="5.5" r="5.5"></circle>
+                    <circle id="Oval-Copy" cx="5.5" cy="19.5" r="5.5"></circle>
+                </g>
+                <rect id="Rectangle" transform="translate(14.495689, 14.495689) rotate(45.000000) translate(-14.495689, -14.495689) " x="-0.504310986" y="8.99568901" width="30" height="11" rx="5.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
