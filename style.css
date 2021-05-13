@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
 
 :root{
+
 	/* color */
-	--cl-red-main: #FF3951;
-	--cl-blue-main: #407CFF;
+	--red: #FF3951;
+	--red-a: rgba(255, 57, 87, 0.4);
+	--blue: #407CFF;
+	--blue-a: rgba(64, 124, 255, 0.5);
+	--green:  #71F1C4;
+	--green-a:  rgba(113, 241, 196, 0.533);
 
-	/* color neutro */
-	--cl-black: #141415;
-	--cl-grey-ligth: #9799B1;
-	--cl-white: #ffffff;
-	
-	/* background colors */
-	--bk-grey-dark: #1D1E1F;
-	--bk-grey-ligth: #f5f6fc;
-	--bk-white: #ffffff;
-	
-	/* color glow */
-	--cl-glow-red: rgba(255, 57, 87, 0.4);
-	--cl-glow-blue: rgba(64, 124, 255, 0.5);
-	--cl-glow-greylight: #EFF0F7;
-	--cl-glow-greydark: #121212;
+	/* neutros */
+	--white: #fff;
+	--white-a: #ffffff00;
+	--grey-ligth:  #f5f6fc;
+	--grey-ligth-glow: #EFF0F7;
 
+	--grey: #9799B1; 	
+
+	--grey-dark: #1D1E1F;
+	--grey-dark-glow: #0d0d0d;
+	--black: #141415;
+	
 	/* font size */
 	--fs-1-hero: 80px;
 	--fs-2-project-title: 60px;
@@ -44,7 +45,79 @@
 	
 	--btn-2-width: 120px;
 	--btn-2-heigh: 55px;
+
+
+/* ------------------- SWITCHER: main color  */
+
+/* main */
+--cl-main: var(--red);
+--cl-main-glow:var(--red-a);
+
+/* secondary */
+--cl-secondary: var(--blue);
+--cl-secondary-glow: var(--blue-a);
+
+
+/* ---------------------- SWITCHER: background */
+
+/* button font color */
+--bt-text-color: var(--white);
+--bt-bk-color: var(--white-a);
+
+/* fonts */
+--font-main-color: var(--white);
+--font-grey: var(--grey);
+
+/* cards */
+--element-main-color: var(--grey-dark);
+--element-main-color-glow: var(--grey-dark-glow);
+/* background colors */
+
+--bk-color: var(--black);
+--bk-color-support: var(--grey-dark);
+
+
 }
+
+
+
+
+/* ----------------------- QUICK VIEW */
+
+
+
+/* 1) See modal */
+.modal{
+	/* display: none; */
+}
+
+/* 2) Floating button */
+.floating__box{
+	display: none;
+}
+
+/* 3) Dark-Ligth theme */
+
+
+/* 4) HTML Description change */
+
+
+/* 5) Header Sticky */
+
+
+/* 6) Creación de cartas (js) */
+
+
+/* 10) Mobile */
+.footer--mobile{
+	/* display: none !important; */
+}
+.floating__button{
+	/* display: none !important; */
+}
+
+
+
 
 
 
@@ -55,8 +128,9 @@
 	box-sizing: border-box;
 	font-family: 'IBM Plex Sans', sans-serif;
 }
-
-
+body{
+	background-color: var(--bk-color);
+}
 .hero,
 .gallery,
 .blame{
@@ -65,6 +139,7 @@
 }
 
 
+/* !!!!!!!!!!!!!!!!!!  Código sucio */
 button{
 	/* button */
 	width: var(--btn-1-width);
@@ -73,14 +148,14 @@ button{
 	border: none;
 	cursor: pointer;
 	/* color */
-	background-color: var(--cl-red-main);
-	color: var(--cl-white); /* -----------*/
+	background-color: var(--cl-main);
+	color: var(--bt-text-color); /* -----------*/
 	/* font */
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-bold);
 }
 button:hover{
-	box-shadow: var(--shadow) var(--cl-glow-red);
+	box-shadow: var(--shadow) var(--cl-main-glow);
 }
 .btn--s{
 	width: var(--btn-2-width);
@@ -88,14 +163,21 @@ button:hover{
 }
 .btn--white{
 	/* color */
-	background-color: var(--bk-white);
-	color: var(--cl-red-main);
+	background-color: var(--bt-bk-color);
+	color: var(--cl-main);
 }
 .btn--white:hover{
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	box-shadow: none;
 }
-
+.btn--white-always{
+	background-color: white;
+	color: var(--cl-main);
+}
+.btn--white-always:hover{
+	color: var(--font-grey);
+	box-shadow: none;
+}
 
 
 
@@ -109,7 +191,6 @@ button:hover{
 	padding-right: 50px;
 	/* box */
 	border-radius: var(--border-radius);
-	background-color: var(--bk-white);
 	/* content */
 	display: flex;
 	justify-content: space-between;
@@ -118,27 +199,26 @@ button:hover{
 	/* position: fixed;
 	top: 25px;
 	z-index: 9; */
-	box-shadow: var(--shadow) var(--cl-glow-greylight);
 }
-
+.header:hover{
 	/* only when scrolling */
-	/* box-shadow: var(--shadow) var(--cl-glow-greylight); */
-
+	background-color: var(--element-main-color);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+}
 .header__logo{
 	display: flex;
-
 }
 .header__logo-image{
 	width: 25px;
 }
 .header__logo-text{
 	margin-left: 10px;
-	color: var(--cl-black);
+	color: var(--font-main-color);
 	font-size: var(--fs-7-logo);
 	font-weight: var(--fw-bold);
 }
 .header__switcher{
-	color: var(--cl-black);
+	color: var(--font-main-color);
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-bold);
 }
@@ -155,12 +235,12 @@ button:hover{
 .hero__title{
 	margin: 120px 0 16px 0;
 	/* margin: 200px 0 16px 0; */
-	color: var(--cl-black);
+	color: var(--font-main-color);
 	font-size: var(--fs-1-hero);
 	font-weight: var(--fw-bold);
 }
 .hero__descr{
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-regular);
 	line-height: var(--line-height);
@@ -181,6 +261,7 @@ button:hover{
 
 
 
+
 /* ------------------------- Sandbox */
 .sandbox{
 	/* border: 1px solid red; */
@@ -189,7 +270,7 @@ button:hover{
 	position: relative;
 }
 .sandbox__legend{
-	color: var(--cl-black);
+	color: var(--cl-main);
 	font-size: var(--fs-3-legend);
 	font-weight: var(--fw-bold);
 	position: absolute;
@@ -197,24 +278,32 @@ button:hover{
   right: 200px;
 }
 .sandbox__name{
-	color: var(--cl-black);
-	font-size: var(--fs-2-project-title);
+	color: var(--cl-main-glow);
+	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 	padding-left: 50px;
 	position: absolute;
 	bottom: 80px;
+}
+.sandbox__name:hover{
+	color: var(--cl-main);
 }
 .sandbox__buton{
 	position: absolute;
 	bottom: -35px;
   left: 41%;
 }
-.sandbox__iframe{
+.sandbox__iframe > iframe{
 	width: 1100px;
-  height: 700px;
+  height: 900px;
+	border: 2px solid var(--bk-color);
   border-radius: var(--border-radius);
-  background-color: var(--bk-grey-ligth);
+  background-color: var(--bt-text-color);
 }
+.sandbox__iframe > iframe:hover{
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+}
+
 
 
 /* ------------------------- Gallery */
@@ -229,11 +318,11 @@ button:hover{
 	/* style */
   width: 30%;
   height: 425px;
-  padding: 36px 22px;
+  padding: 36px 24px;
 	margin-bottom: 40px;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--cl-glow-greylight);
-  background-color: var(--bk-white);
+  box-shadow: var(--shadow) var(--element-main-color-glow);
+  background-color: var(--element-main-color);
 	/* content */
 	display: flex;
 	flex-direction: column;
@@ -241,10 +330,10 @@ button:hover{
 
 }
 .gallery__card:hover{
-	box-shadow: var(--shadow) var(--cl-glow-red);
+	box-shadow: var(--shadow) var(--cl-main-glow);
 }
 .gallery__card-title{
-	color: var(--cl-black);
+	color: var(--font-main-color);
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 }
@@ -261,7 +350,7 @@ button:hover{
   padding: 20px;
 	margin: 0 10px 40px;
 	/* style */
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-regular);
 	/* Content */
@@ -271,12 +360,86 @@ button:hover{
 
 
 
+/* ------------------------- Modal */
 
-/* ------------------------- Footer */
-.footer{
-	height: 550px;
-	background-color: var(--bk-grey-ligth);
+.modal{
+	width: 1000px;
+  height: 700px;
+  padding: 60px;
+	margin: auto;
+	margin-bottom: 70px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow) var(--element-main-color-glow);
+  background-color: var(--element-main-color);
 }
+.modal__container{
+
+}
+.modal__close{
+	display: flex;
+	justify-content: flex-end;
+}
+.modal__info{
+	margin-top: 100px;
+}
+.modal__info-title{
+	color: var(--font-main-color);
+	font-size: var(--fs-2-project-title);
+	font-weight: var(--fw-bold);
+}
+.modal__info-title > p:hover{
+	text-decoration: underline;
+}
+.modal__info-badges > span{
+	display: inline-block;
+	margin: 30px 12px 20px 0;
+	border-radius: var(--border-radius);
+	padding: 4px 16px;
+	background-color: var(--cl-main);
+	color: var(--bt-text-color);
+	
+}
+.modal__info-desc{
+	color: var(--font-grey);
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-regular);
+	line-height: var(--line-height);
+	width: 60%;
+	padding-bottom: 44px;
+	border-bottom: 1px solid var(--font-grey);
+}
+.modal__info-kpi{
+	margin-top: 32px;
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+/* .modal__info-kpi {
+
+} */
+/* .modal__info-kpi-hours{
+
+} */
+/* .modal__info-kpi-lines{
+
+} */
+/* .modal__info-kpi-weight{
+
+} */
+.--number{
+	color: var(--font-main-color);
+	font-size: var(--fs-3-legend);
+	font-weight: var(--fw-bold);
+	text-align: center;
+}
+.--footnote{
+	color: var(--font-grey);
+	font-size: var(--fs-6-button);
+	font-weight: var(--fw-regular);
+	width: 110px;
+	text-align: center;
+}
+
 
 
 /* ------------------------- blame */
@@ -285,14 +448,14 @@ button:hover{
   height: 220px;
 	padding: 50px 50px;
   border-radius: var(--border-radius);
-  background-color: var(--cl-red-main);
+  background-color: var(--cl-main);
 	/* display */
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 }
 .blame__title{
-	color: var(--cl-white);
+	color: var(--bt-text-color);
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 }
@@ -302,6 +465,11 @@ button:hover{
 
 
 
+/* ------------------------- Footer */
+.footer{
+	height: 550px;
+	background-color: var(--bk-color-support);
+}
 .footer__card-container{
 	/* box */
 	padding: 50px;
@@ -318,8 +486,8 @@ button:hover{
   height: 215px;
 	padding: 30px;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--cl-glow-greylight);
-  background-color: var(--bk-white);
+  box-shadow: var(--shadow) var(--element-main-color-glow);
+  background-color: var(--element-main-color);
 	/* content */
 	display: flex;
 }
@@ -327,19 +495,19 @@ button:hover{
 	width: 80px;
 	margin-right: 40px;
 	border-radius: var(--border-radius);
-	box-shadow: var(--shadow) var(--cl-glow-greylight);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
 }
 /* .footer__card-info{
 
 } */
 .footer__card-info--title{
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-bold);
 }
 .footer__card-info--job{
 	margin-top: 16px;
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-regular);
 }
@@ -348,10 +516,10 @@ button:hover{
 }
 .footer__card-info--links a{
 	text-decoration: none;
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 }
 .footer__card-info--links a:hover{
-	color: var(--cl-red-main);
+	color: var(--cl-main);
 	font-weight: var(--fw-bold);
 }
 
@@ -364,12 +532,12 @@ button:hover{
 /* .footer__spam-desc{
 } */
 .footer__spam-desc-title{
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-bold);
 }
 .footer__spam-desc-body{
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-regular);
 }
@@ -382,18 +550,20 @@ button:hover{
   height: var(--btn-1-heigh);
 	padding-left: 20px;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--cl-glow-greylight);
-  background-color:var(--bk-white);
+  box-shadow: var(--shadow) var(--element-main-color-glow);
+  background-color:var(--element-main-color);
 	border:none;
+	margin-right: 15px;
 	/* color */
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-regular);
 }
 .footer__spam-form input:focus{
 	outline: none;
-	box-shadow: var(--shadow) var(--cl-glow-red);
+	box-shadow: var(--shadow) var(--cl-main-glow);
 
 }
+
 
 
 /* ------------------------- Botón flotante */
@@ -402,7 +572,6 @@ button:hover{
 	bottom: 15px;
 	right: 15px; */
 }
-
 .floating__button{
 	/* position */
 	position: fixed;
@@ -412,16 +581,14 @@ button:hover{
 	width: 90px;
 	height: 90px;
 	border-radius: 30px;
-	background-color: var(--cl-blue-main);
-	box-shadow: var(--shadow) var(--cl-glow-blue);
+	background-color: var(--cl-secondary);
+	box-shadow: var(--shadow) var(--cl-secondary-glow);
 	/* contenido */
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
-
 .floating__box{
-	display: none;
 	/* position */
 	position: fixed;
 	bottom: 175px;
@@ -431,19 +598,19 @@ button:hover{
   height: 230px;
   padding: 36px;
   border-radius: 30px;
-	background-color: var(--cl-blue-main);
-	box-shadow: var(--shadow) var(--cl-glow-blue);
+	background-color: var(--cl-secondary);
+	box-shadow: var(--shadow) var(--cl-secondary-glow);
 }
-
 .floating__box-message{
 	width: 100px;
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
-	color: var(--cl-white);
+	color: var(--bt-text-color);
 }
 
-/* ------------------------- Mobile */
 
+
+/* ------------------------- Mobile */
 .mobile{
 	display: none;
 	margin: 10%;
@@ -453,36 +620,31 @@ button:hover{
 	height: 80px;
 	/* box */
 	border-radius: var(--border-radius);
-	background-color: var(--bk-white);
-	box-shadow: var(--shadow) var(--cl-glow-greylight);
+	background-color: var(--element-main-color);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
 	/* content */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	/* only when scrolling */
 }
-
 .mobile__title{
 	margin-top: 20%;
-	color: var(--cl-black);
+	color: var(--font-main-color);
 	font-size: var(--fs-2-project-title);
 	font-weight: var(--fw-bold);
 }
-
 .mobile__body{
 	margin-top: 24px;
-	color: var(--cl-grey-ligth);
+	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-regular);
 	line-height: var(--line-height);
 	width: 75%;
 }
-
 .mobile__button{
 	margin-top: 24px;
 }
-
-
 
 
 /* ------------------------- Mediaquery */
@@ -500,6 +662,14 @@ button:hover{
 
 	.mobile{
 		display: block;
+	}
+
+	.footer--mobile{
+		/* display: none; */
+		display: inline-block;
+		width: 90%;
+		height: 300px;
+		padding: 25px;
 	}
 
 }
