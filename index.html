@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 
 <head>
 	<meta charset="UTF-8">
@@ -23,13 +23,18 @@
 			<span>
 				late owl
 			</span>
-			<span class="header__switcher-toggle">
-				| toggle |
-			</span>
+
+			<label class="header__switcher-toggle">
+				<input type="checkbox" checked>  <span class="header__switcher-toggle-slider"></span>
+			</label>
+
 			<span>
 				early bird
 			</span>
 		</div>
+
+
+
 	</header>
 
 	<!-- --------------------------- Hero -->
@@ -38,7 +43,7 @@
 			<p>try sandbox</p>
 		</div>
 		<div class="hero__descr">
-			<p class="hero__descr--1">Your one-time dose of my <strong>bootcamp first month 🥲 of solo projects</strong>.</p>
+			<p class="hero__descr--1">Your one-time dose of <strong>bootcamp first month 🥲 solo projects</strong>.</p>
 			<!-- <p class="hero__descr--2">It's like using <strong>homer’s web page </strong>👨‍💻 <br> but with CSS & JS.</p> -->
 			<!-- <p class="hero__descr--3">Like the <strong>repl.it run console</strong> 😑 <br> without the fun.</p> -->
 		</div>
@@ -161,8 +166,15 @@
 	<section class="mobile">
 		<!-- header -->
 		<div class="mobile_header">
-			<img class="header__logo-image" src="/assets/logo-color.svg" alt="logo">
-			<span class="header__logo-text"> sandbox </span>
+			<div>
+				<img class="header__logo-image" src="/assets/logo-color.svg" alt="logo">
+				<span class="header__logo-text"> sandbox </span>
+			</div>
+			<div class="header__switcher">
+				<label class="header__switcher-toggle">
+					<input type="checkbox" checked>  <span class="header__switcher-toggle-slider"></span>
+				</label>
+			</div>
 		</div>
 
 		<!-- body -->

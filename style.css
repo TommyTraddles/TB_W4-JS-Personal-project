@@ -5,6 +5,7 @@
 	/* color */
 	--red: #FF3951;
 	--red-a: rgba(255, 57, 87, 0.4);
+	--rose: #ffdbde;
 	--blue: #407CFF;
 	--blue-a: rgba(64, 124, 255, 0.5);
 	--green:  #71F1C4;
@@ -13,8 +14,8 @@
 	/* neutros */
 	--white: #fff;
 	--white-a: #ffffff00;
-	--grey-ligth:  #f5f6fc;
-	--grey-ligth-glow: #EFF0F7;
+	--grey-light:  #f5f6fc;
+	--grey-light-glow: #EFF0F7;
 
 	--grey: #9799B1; 	
 
@@ -62,23 +63,22 @@
 
 /* button font color */
 --bt-text-color: var(--white);
---bt-bk-color: var(--white-a);
+--bt-bk-color: var(--white);
 
 /* fonts */
---font-main-color: var(--white);
+--font-main-color: var(--black);
 --font-grey: var(--grey);
 
 /* cards */
---element-main-color: var(--grey-dark);
---element-main-color-glow: var(--grey-dark-glow);
-/* background colors */
+--element-main-color: var(--white);
+--element-main-color-glow: var(--grey-light-glow);
 
---bk-color: var(--black);
---bk-color-support: var(--grey-dark);
+/* background colors */
+--bk-color: var(--white);
+--bk-color-support: var(--grey-light);
 
 
 }
-
 
 
 
@@ -88,7 +88,7 @@
 
 /* 1) See modal */
 .modal{
-	/* display: none; */
+	display: none;
 }
 
 /* 2) Floating button */
@@ -96,25 +96,38 @@
 	display: none;
 }
 
-/* 3) Dark-Ligth theme */
+
+/* 3) Dark-light theme */
+/* Preferencias de sistema */
 
 
-/* 4) HTML Description change */
+/* 4) Dark-light toggle */
+/* HTML */
 
 
-/* 5) Header Sticky */
+/* 5) Main color change */
+/* copy + paste :root */
 
 
-/* 6) Creación de cartas (js) */
+/* 6) Header Sticky */
 
 
-/* 10) Mobile */
+/* 7) HTML Description change */
+/* HTML */
+
+
+/* 8) Creación de cards (js) */
+
+
+/* 9) Mobile */
 .footer--mobile{
-	/* display: none !important; */
+	display: none !important;
 }
-.floating__button{
-	/* display: none !important; */
-}
+
+
+
+
+
 
 
 
@@ -137,7 +150,6 @@ body{
 	width: 1000px;
 	margin: auto;
 }
-
 
 /* !!!!!!!!!!!!!!!!!!  Código sucio */
 button{
@@ -217,14 +229,55 @@ button:hover{
 	font-size: var(--fs-7-logo);
 	font-weight: var(--fw-bold);
 }
+
 .header__switcher{
 	color: var(--font-main-color);
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-bold);
+	display: flex;
+	align-items: center;
 }
-/* .header__switcher-toggle{
-
-} */
+.header__switcher-toggle{
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	margin: 0 16px;
+}
+.header__switcher-toggle input{
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.header__switcher-toggle-slider{
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: var(--border-radius);
+	background: var(--rose);
+	transition: .4s;
+}
+.header__switcher-toggle-slider:hover{
+	box-shadow: var(--shadow) var(--cl-main-glow);
+}
+.header__switcher-toggle-slider:before{
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	border-radius: var(--border-radius);
+	background-color: var(--cl-main);
+	transition: .4s;
+}
+.header__switcher-toggle input:checked +
+.header__switcher-toggle-slider:before{
+	transform: translateX(26px);
+}
 
 
 
@@ -279,11 +332,11 @@ button:hover{
 }
 .sandbox__name{
 	color: var(--cl-main-glow);
-	font-size: var(--fs-4-titles);
+	font-size: var(--fs-7-logo);
 	font-weight: var(--fw-bold);
 	padding-left: 50px;
 	position: absolute;
-	bottom: 80px;
+	bottom: 60px;
 }
 .sandbox__name:hover{
 	color: var(--cl-main);
@@ -295,10 +348,10 @@ button:hover{
 }
 .sandbox__iframe > iframe{
 	width: 1100px;
-  height: 900px;
-	border: 2px solid var(--bk-color);
-  border-radius: var(--border-radius);
-  background-color: var(--bt-text-color);
+	height: 900px;
+	border: 5px solid var(--grey-light-glow);
+	border-radius: var(--border-radius);
+	background-color: var(--bt-text-color);
 }
 .sandbox__iframe > iframe:hover{
 	box-shadow: var(--shadow) var(--element-main-color-glow);
@@ -623,8 +676,9 @@ button:hover{
 	background-color: var(--element-main-color);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 	/* content */
+	padding: 0 35px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	/* only when scrolling */
 }
@@ -645,6 +699,7 @@ button:hover{
 .mobile__button{
 	margin-top: 24px;
 }
+
 
 
 /* ------------------------- Mediaquery */
@@ -671,5 +726,71 @@ button:hover{
 		height: 300px;
 		padding: 25px;
 	}
+}
+
+
+
+/* -------------------------- Darkmode */
+@media (prefers-color-scheme: dark) {
+	:root{
+		/* button font color */
+		--bt-text-color: var(--white);
+		--bt-bk-color: var(--white-a);
+
+		/* fonts */
+		--font-main-color: var(--white);
+		--font-grey: var(--grey);
+
+		/* cards */
+		--element-main-color: var(--grey-dark);
+		--element-main-color-glow: var(--grey-dark-glow);
+		/* background colors */
+
+		--bk-color: var(--black);
+		--bk-color-support: var(--grey-dark);
+	}
 
 }
+@media (prefers-color-scheme: light) {
+	:root{
+		/* button font color */
+		--bt-text-color: var(--white);
+		--bt-bk-color: var(--white);
+
+		/* fonts */
+		--font-main-color: var(--black);
+		--font-grey: var(--grey);
+
+		/* cards */
+		--element-main-color: var(--white);
+		--element-main-color-glow: var(--grey-light-glow);
+
+		/* background colors */
+		--bk-color: var(--white);
+		--bk-color-support: var(--grey-light);
+		}
+}
+html[data-theme="dark"]{
+	/* button font color */
+	--bt-text-color: var(--white);
+	--bt-bk-color: var(--white-a);
+
+	/* fonts */
+	--font-main-color: var(--white);
+	--font-grey: var(--grey);
+
+	/* cards */
+	--element-main-color: var(--grey-dark);
+	--element-main-color-glow: var(--grey-dark-glow);
+	/* background colors */
+
+	--bk-color: var(--black);
+	--bk-color-support: var(--grey-dark);
+}
+
+
+
+/* -------------------------- Motion */
+/* .transition{
+
+} */
