@@ -106,14 +106,14 @@ const modal_overlay = document.querySelector('.modal__overlay');
 const gallery_card_title = document.querySelector('.gallery__card-title');
 
 
-/* for each tag ❌ */
+
 
 function defineModal(id) {
 	let shell_modal_card = document.createElement('div');
 	shell_modal_card.className = 'modal__info';
 	shell_modal_card.innerHTML =
 		'<div class="modal__info-title""> <a href="' + projects[id-1].urlRepo + '" target="_blank"> ' + projects[id-1].name + ' 🔗 </a> </div>'
-		+ '<div class="modal__info-badges"> <span> ' + projects[id-1].tags[0] + ' </span> </span></div>'
+		+ '<div class="modal__info-badges"> <span> ' + projects[id-1].tags[0] + ' </span> </span></div>' /* for each tag ❌ */
 		+ '<div class="modal__info-desc"> <p> ' + projects[id-1].description + ' </p> </div>'
 		+ '<div class="modal__info-kpi">'
 		+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id-1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
@@ -236,15 +236,4 @@ function openFab() {
 };
 floating_button.addEventListener('click', openFab);
 
-
-
-
-
-// --------------------- Listado de pendientes ❌
-
-/**
- * Mobile: popup
- * 
- * 
- */
 
