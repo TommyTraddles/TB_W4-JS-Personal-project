@@ -51,7 +51,7 @@ let projects = [
 		id: 4,
 		name: "Sandbox project",
 		urlProd: "https://tommytraddles.github.io/",
-		urlRepo: "https://github.com/TommyTraddles/TommyTraddles.github.io",
+		urlRepo: "https://github.com/TommyTraddles/W4-JS-Personal-project",
 		tags: [
 			"javascript",
 			"html",
