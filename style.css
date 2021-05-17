@@ -380,6 +380,9 @@ button:active{
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.gallery__cards{
+
+}
 .gallery__card{
 	/* style */
   width: 30%;
@@ -431,7 +434,6 @@ button:active{
 .modal{
 	
 }
-
 /* black overlay */
 .modal__overlay{
 	/* display */
@@ -483,7 +485,6 @@ button:active{
 	transform: translateY(0px);
 	opacity: 1;
 }
-
 .modal__close{
 	display: flex;
 	justify-content: flex-end;
@@ -685,7 +686,6 @@ button:active{
 /* ------------------------- Botón flotante */
 
 /* BOTÓN */
-
 .floating{
 	position: absolute;
 	z-index: 9;
@@ -718,7 +718,6 @@ button:active{
 }
 
 /* CAJA */
-
 .floating__box{
 	/* view */
 	opacity: 0;
