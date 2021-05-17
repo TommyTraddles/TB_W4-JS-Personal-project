@@ -81,45 +81,6 @@
 
 
 
-/* ----------------------- QUICK VIEW */
-
-
-
-
-/* 1) See modal */
-.modal{
-	/* display: none; */
-}
-
-
-/* 5) Main color change */
-/* copy + paste :root */
-
-
-
-/* 7) HTML Description change */
-/* HTML */
-
-
-
-/* 8) Creación de cards (js) */
-
-
-/* 9) Mobile */
-.footer--mobile{
-	display: none !important;
-}
-
-
-/* Onboarding */
-
-/* Animaciones */
-
-
-
-
-
-
 
 
 /* ------------------------- Global */
@@ -198,14 +159,11 @@ button:active{
 /* ------------------------- Header */
 
 /* HEADER */
-
 .header{
 	/* box */
 	width: 1200px;
 	height: 70px;
 	border-radius: var(--border-radius);
-	/* margin: auto; */
-	margin-top: 35px;
 	padding: 0 100px;
 	/* content */
 	display: flex;
@@ -239,7 +197,6 @@ button:active{
 }
 
 /* DARK MODE */
-
 /* contenedor completo */
 .header__switcher{
 	color: var(--font-main-color);
@@ -498,12 +455,13 @@ button:active{
 .modal__info{
 	margin-top: 100px;
 }
-.modal__info-title{
+.modal__info-title a{
 	color: var(--font-main-color);
 	font-size: var(--fs-2-project-title);
 	font-weight: var(--fw-bold);
+	text-decoration: none;
 }
-.modal__info-title > p:hover{
+.modal__info-title > a:hover{
 	text-decoration: underline;
 	cursor: pointer;
 }
