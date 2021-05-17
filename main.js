@@ -1,8 +1,6 @@
 'use strict'
 
-
-
-// --------------------- Objeto ✅
+// ✅
 let projects = [
 	{
 		id: 1,
@@ -11,7 +9,10 @@ let projects = [
 		urlRepo: "https://github.com/TommyTraddles/TheBridge_W2-CSS-mundo-acido",
 		tags: [
 			"html",
-			"css"
+			"css",
+			"sangre",
+			"sudor",
+			"lágrimas"
 		],
 		description: "Sed molestie egestas ex. Sed et massa a ex tristique hendrerit. Duis ipsum erat, ornare ut mauris quis, mattis bibendum eros. ",
 		kpiHour: 10,
@@ -64,15 +65,7 @@ let projects = [
 	}
 ];
 
-
-
-
-
-
-
-
-
-// --------------------- Shell card ✅
+// ✅
 const gallery = document.querySelector(".gallery");
 function seeProjects() {
 	for (const project in projects) {
@@ -89,15 +82,7 @@ function seeProjects() {
 };
 seeProjects();
 
-
-
-
-
-
-
-
-
-// -------------------- Modal 
+// ✅
 const gallery_card_modal = document.querySelectorAll('.gallery__card-modal');
 const modal_container = document.querySelector('.modal__container');
 const modal_info = document.querySelector('.modal__info');
@@ -105,26 +90,26 @@ const modal_close = document.querySelector('.modal__close');
 const modal_overlay = document.querySelector('.modal__overlay');
 const gallery_card_title = document.querySelector('.gallery__card-title');
 function defineModal(id) {
-	let group_tag = [ ];
-	for (let i = 0; i < projects[id-1].tags.length; i++) {
+	let group_tag = [];
+	for (let i = 0; i < projects[id - 1].tags.length; i++) {
 		let shell_modal_info_tags;
-		let tag_print = projects[id-1].tags[i];
+		let tag_print = projects[id - 1].tags[i];
 		shell_modal_info_tags = '<span>' + tag_print + '</span>';
 		group_tag.push(shell_modal_info_tags);
 	}
 	let shell_modal_card = document.createElement('div');
 	shell_modal_card.className = 'modal__info';
 	shell_modal_card.innerHTML =
-	' <div class="modal__info-title""> <a href="' + projects[id - 1].urlRepo + '" target="_blank"> ' + projects[id - 1].name + ' 🔗 </a> </div>'
-	+ '<div class="modal__info-badges">'
-	+ group_tag.join('')
-	+ '</div>'
-	+ '<div class="modal__info-desc"> <p> ' + projects[id - 1].description + ' </p> </div>'
-	+ '<div class="modal__info-kpi">'
-	+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id - 1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
-	+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id - 1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
-	+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id - 1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
-	+ '</div>';
+		' <div class="modal__info-title""> <a href="' + projects[id - 1].urlRepo + '" target="_blank"> ' + projects[id - 1].name + ' 🔗 </a> </div>'
+		+ '<div class="modal__info-badges">'
+		+ group_tag.join('')
+		+ '</div>'
+		+ '<div class="modal__info-desc"> <p> ' + projects[id - 1].description + ' </p> </div>'
+		+ '<div class="modal__info-kpi">'
+		+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id - 1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
+		+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id - 1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
+		+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id - 1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
+		+ '</div>';
 	modal_container.appendChild(shell_modal_card);
 	openModal()
 }
@@ -139,20 +124,9 @@ function closeModal() {
 	let modal_info = document.querySelector('.modal__info');
 	modal_container.removeChild(modal_info);
 };
-// gallery_card_modal.forEach(selector => {
-// 	selector.addEventListener('click', defineModal);
-// });
 modal_close.addEventListener('click', closeModal);
 
-
-
-
-
-
-
-
-
-// --------------------- Random project ✅
+// ✅
 const sandbox_random = document.querySelector('.sandbox__buton');
 const sandbox_url = document.querySelector('.sandbox__iframe');
 const sandbox_name = document.querySelector('.sandbox__name');
@@ -165,15 +139,7 @@ function randomProject() {
 }
 sandbox_random.addEventListener('click', randomProject);
 
-
-
-
-
-
-
-
-// --------------------- Shell sandbox ✅
-
+// ✅
 function playOnSandbox(id) {
 	let shell_sandbox_url = '<iframe src="' + projects[id - 1].urlProd + '"></iframe>'
 	let shell_sandbox_name = '<p>' + projects[id - 1].name + '</p>'
@@ -181,32 +147,14 @@ function playOnSandbox(id) {
 	sandbox_name.innerHTML = shell_sandbox_name;
 }
 
-
-
-
-
-
-
-
-
-
-// -------------------- Sticky header ✅
+// ✅
 const header = document.querySelector('.header');
 function stickyHeader() {
 	header.classList.toggle('sticky', window.scrollY > 0);
 }
-window.addEventListener('scroll', stickyHeader)
+window.addEventListener('scroll', stickyHeader);
 
-
-
-
-
-
-
-
-
-
-// -------------------- Dark theme ✅
+// ✅
 const switcher_toggle = document.querySelector('.header__switcher-toggle-switcher');
 function switchTheme() {
 	if (switcher_toggle.checked) {
@@ -217,21 +165,10 @@ function switchTheme() {
 };
 switcher_toggle.addEventListener('click', switchTheme);
 
-
-
-
-
-
-
-
-
-
-// -------------------- Fab ✅
+// ✅
 const floating_button = document.querySelector('.floating__button');
 const floating_box = document.querySelector('.floating__box');
 function openFab() {
 	floating_box.classList.toggle('floating__box-active')
 };
 floating_button.addEventListener('click', openFab);
-
-

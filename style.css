@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
 
 :root{
-
 	/* color */
 	--red: #FF3951;
 	--red-a: rgba(255, 57, 87, 0.4);
@@ -10,7 +9,6 @@
 	--blue-a: rgba(64, 124, 255, 0.5);
 	--green:  #71F1C4;
 	--green-a:  rgba(113, 241, 196, 0.533);
-
 	/* neutros */
 	--white: #fff;
 	--white-a: #ffffff00;
@@ -20,9 +18,6 @@
 	--grey-dark: #1D1E1F;
 	--grey-dark-glow: #0d0d0d;
 	--black: #141415;
-	
-
-
 	/* font size */
 	--fs-1-hero: 80px;
 	--fs-2-project-title: 60px;
@@ -31,59 +26,33 @@
 	--fs-5-body: 20px;
 	--fs-6-button: 16px;
 	--fs-7-logo: 30px;
-
 	/* font weigth */
 	--fw-regular: 400;
 	--fw-bold: 700;
-
 	/* propierties */
 	--shadow: 0px 10px 30px 0px;
 	--border-radius: 40px;
 	--line-height: 1.75;
-
 	--btn-1-width: 200px;
 	--btn-1-heigh: 70px;
-	
 	--btn-2-width: 120px;
 	--btn-2-heigh: 55px;
-
-
 /* ------------------- SWITCHER: main color  */
-
-/* main */
---cl-main: var(--red);
---cl-main-glow:var(--red-a);
-
-/* secondary */
---cl-secondary: var(--blue);
---cl-secondary-glow: var(--blue-a);
-
-
+	--cl-main: var(--red);
+	--cl-main-glow:var(--red-a);
+	--cl-secondary: var(--blue);
+	--cl-secondary-glow: var(--blue-a);
 /* ---------------------- SWITCHER: background */
-
-/* button font color */
---bt-text-color: var(--white);
---bt-bk-color: var(--white);
-
-/* fonts */
---font-main-color: var(--black);
---font-grey: var(--grey);
-
-/* cards */
---element-main-color: var(--white);
---element-main-color-glow: var(--grey-light-glow);
-
-/* background colors */
---bk-color: var(--white);
---bk-color-support: var(--grey-light);
-
+	--bt-text-color: var(--white);
+	--bt-bk-color: var(--white);
+	--font-main-color: var(--black);
+	--font-grey: var(--grey);
+	--element-main-color: var(--white);
+	--element-main-color-glow: var(--grey-light-glow);
+	--bk-color: var(--white);
+	--bk-color-support: var(--grey-light);
 }
 
-
-
-
-
-/* ------------------------- Global */
 *{
 	margin: 0;
 	padding: 0;
@@ -99,34 +68,21 @@ body{
 	width: 1000px;
 	margin: auto;
 }
-
-/* !!!!!!!!!!!!!!!!!!  Código sucio */
 button{
-	/* button */
 	width: var(--btn-1-width);
 	height: var(--btn-1-heigh);
 	border-radius: var(--border-radius);
 	border: none;
 	cursor: pointer;
-	/* color */
 	background-color: var(--cl-main);
 	color: var(--bt-text-color);
-	/* font */
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-bold);
 }
 button:hover{
 	box-shadow: var(--shadow) var(--cl-main-glow);
 }
-/* añadir hand al hacer hover */
-/* button:hover::after{
-	opacity: 1;
-	content: " 👋";
-} */
-/* añadir estado al botón */
 button:active{
-	/* background-color: transparent(var(--cl-main), 0.1); */
-	/* background-color: darken(var(--cl-secondary), 10%); */
 	background-color: var(--cl-main-glow);
 }
 button a{
@@ -138,7 +94,6 @@ button a{
 	height: var(--btn-2-heigh);
 }
 .btn--white{
-	/* color */
 	background-color: var(--bt-bk-color);
 	color: var(--cl-main);
 }
@@ -158,22 +113,14 @@ button a{
 	box-shadow: none;
 }
 
-
-
-/* ------------------------- Header */
-
-/* HEADER */
 .header{
-	/* box */
 	width: 1200px;
 	height: 70px;
 	border-radius: var(--border-radius);
 	padding: 0 100px;
-	/* content */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* sticky */
 	position: fixed;
 	top: 15px;
 	right: 0;
@@ -182,7 +129,6 @@ button a{
     margin-left: auto;
 	z-index: 9;
 }
-/* al hacer scroll */
 .sticky{
 	background-color: var(--element-main-color);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
@@ -199,9 +145,6 @@ button a{
 	font-size: var(--fs-7-logo);
 	font-weight: var(--fw-bold);
 }
-
-/* DARK MODE */
-/* contenedor completo */
 .header__switcher{
 	color: var(--font-main-color);
 	font-size: var(--fs-6-button);
@@ -209,7 +152,6 @@ button a{
 	display: flex;
 	align-items: center;
 }
-/* solo swticher */
 .header__switcher-toggle{
 	position: relative;
 	display: inline-block;
@@ -217,13 +159,11 @@ button a{
 	height: 34px;
 	margin: 0 16px;
 }
-/* hide checkbox */
 .header__switcher-toggle input{
 	opacity: 0;
 	width: 0;
 	height: 0;
 }
-/* base del slider */
 .header__switcher-toggle-slider{
 	position: absolute;
 	cursor: pointer;
@@ -232,14 +172,12 @@ button a{
 	right: 0;
 	bottom: 0;
 	border-radius: 100px;
-	/* border: 1px solid var(--element-main-color-glow); */
 	background: var(--element-main-color-glow);
 	transition: .5s;
 }
 .header__switcher-toggle-slider:hover{
 	box-shadow: var(--shadow) var(--cl-main-glow);
 }
-/* pseudo botón */
 .header__switcher-toggle-slider:before{
 	position: absolute;
 	content: "";
@@ -251,18 +189,10 @@ button a{
 	background-color: var(--cl-main);
 	transition: .5s;
 }
-/* Motion when clicked*/
 .header__switcher-toggle input:checked +
 .header__switcher-toggle-slider:before{
 	transform: translateX(26px);
 }
-
-
-
-/* ------------------------- Hero */
-/* .hero{
-	border: 1px solid green;
-} */
 .hero__title{
 	margin: 200px 0 16px 0;
 	color: var(--font-main-color);
@@ -276,25 +206,11 @@ button a{
 	line-height: var(--line-height);
 	width: 33%;
 }
-/* .hero__descr--1{
-
-} */
-/* .hero__descr--2{
-
-} */
-/* .hero__descr--3{
-
-} */
 .hero__button{
 	margin: 40px 0 150px 0;
 }
 
-
-
-
-/* ------------------------- Sandbox */
 .sandbox{
-	/* border: 1px solid red; */
 	width: 1100px;
 	margin: auto;
 	position: relative;
@@ -321,7 +237,7 @@ button a{
 .sandbox__buton{
 	position: absolute;
 	bottom: -35px;
-  left: 41%;
+	left: 41%;
 }
 .sandbox__iframe > iframe{
 	width: 1100px;
@@ -334,9 +250,6 @@ button a{
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 }
 
-
-
-/* ------------------------- Gallery */
 .gallery{
 	margin-top: 130px;
 	margin-bottom: 46px;
@@ -346,7 +259,6 @@ button a{
 
 }
 .gallery__card{
-	/* style */
 	width: 30%;
 	height: 425px;
 	padding: 36px 24px;
@@ -354,7 +266,6 @@ button a{
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 	background-color: var(--element-main-color);
-	  /* content */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -368,58 +279,34 @@ button a{
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 }
-/* .gallery__card-buttons{
-} */
-/* .gallery__card-play{
-} */
-/* .gallery__card-modal{
-} */
 .gallery__card-empty{
-	/* position */
 	width: 30%;
 	height: 425px;
 	padding: 20px;
 	margin: 0 10px 40px;
-	/* style */
 	color: var(--font-grey);
 	font-size: var(--fs-5-body);
 	font-weight: var(--fw-regular);
-	/* Content */
 	display: flex;
 	align-items: center
 }
 
-
-
-/* ------------------------- Modal */
-
-.modal{
-	
-}
-/* black overlay */
 .modal__overlay{
-	/* display */
 	display: none;
-	/* position */
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1;
-	/* box */
 	width: 100vw;
 	height: 100vh;
 	background: var(--black);
-	/* style */
 	opacity: 0.5;
 }
 .modal__overlay--active{
 	display: block;
 }
-/* container */
 .modal__container{
-	/* display */
 	display: none;
-	/* position */
 	position: fixed;
 	top: 20vh;
 	left: 0;
@@ -427,20 +314,17 @@ button a{
 	margin-right: auto;
     margin-left: auto;
 	z-index: 9;
-	/* box */
 	width: 1000px;
 	height: 700px;
 	padding: 60px;
 	margin: auto;
 	margin-bottom: 70px;
-	/* style */
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 	background-color: var(--element-main-color);
-	/* motion */
 	transition: .5s ease-in-out;
 	transform: translateY(50px);
-	opacity: .8
+	opacity: .8;
 }
 .modal__container--active{
 	display: block;
@@ -493,18 +377,6 @@ button a{
 	display: flex;
 	justify-content: space-between;
 }
-/* .modal__info-kpi {
-
-} */
-/* .modal__info-kpi-hours{
-
-} */
-/* .modal__info-kpi-lines{
-
-} */
-/* .modal__info-kpi-weight{
-
-} */
 .--number{
 	color: var(--font-main-color);
 	font-size: var(--fs-3-legend);
@@ -519,17 +391,12 @@ button a{
 	text-align: center;
 }
 
-
-
-
-/* ------------------------- blame */
 .blame{
 	width: 1100px;
-  height: 220px;
+	height: 220px;
 	padding: 50px 50px;
-  border-radius: var(--border-radius);
-  background-color: var(--cl-main);
-	/* display */
+	border-radius: var(--border-radius);
+	background-color: var(--cl-main);
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -539,36 +406,25 @@ button a{
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 }
-/* .blame__button{
 
-} */
-
-
-
-/* ------------------------- Footer */
 .footer{
 	height: 550px;
 	background-color: var(--bk-color-support);
 }
 .footer__card-container{
-	/* box */
 	padding: 50px;
 	width: 1100px;
 	margin: auto;
-	/* content */
 	display: flex;
 	justify-content: space-between;
 }
-
-
 .footer__card{
 	width: 450px;
-  height: 215px;
+	height: 215px;
 	padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--element-main-color-glow);
-  background-color: var(--element-main-color);
-	/* content */
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+	background-color: var(--element-main-color);
 	display: flex;
 }
 .footer__card-image img{
@@ -577,9 +433,6 @@ button a{
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 }
-/* .footer__card-info{
-
-} */
 .footer__card-info--title{
 	color: var(--font-grey);
 	font-size: var(--fs-5-body);
@@ -602,15 +455,11 @@ button a{
 	color: var(--cl-main);
 	font-weight: var(--fw-bold);
 }
-
-
 .footer__spam{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-/* .footer__spam-desc{
-} */
 .footer__spam-desc-title{
 	color: var(--font-grey);
 	font-size: var(--fs-5-body);
@@ -625,86 +474,65 @@ button a{
 	margin-top: 20px;
 }
 .footer__spam-form input{
-	/* box */
-  width: 250px;
-  height: var(--btn-1-heigh);
+	width: 250px;
+	height: var(--btn-1-heigh);
 	padding-left: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--element-main-color-glow);
-  background-color:var(--element-main-color);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+	background-color:var(--element-main-color);
 	border:none;
 	margin-right: 15px;
-	/* color */
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-regular);
 }
 .footer__spam-form input:focus{
 	outline: none;
 	box-shadow: var(--shadow) var(--cl-main-glow);
-
 }
 
-
-
-/* ------------------------- Botón flotante */
-
-/* BOTÓN */
 .floating{
 	position: absolute;
 	z-index: 9;
 }
 .floating__button{
-	/* position */
 	position: fixed;
 	bottom: 70px;
 	right: 55px;
 	cursor: pointer;
-	/* box */
 	width: 90px;
 	height: 90px;
 	border-radius: 30px;
 	background-color: var(--cl-secondary);
 	box-shadow: var(--shadow) var(--cl-secondary-glow);
-	/* contenido */
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	/* motion */
 	transition: .2s ease-in-out;
 }
-/* estados de botón */
 .floating__button:hover{
 	transform: scale(1.1);
 }
 .floating__button:active{
 	background-color: var(--cl-secondary-glow);
 }
-
-/* CAJA */
 .floating__box{
-	/* view */
 	opacity: 0;
-	/* position */
 	position: fixed;
 	bottom: 175px;
 	right: 55px;
-	/* box */
 	width: 300px;
 	height: 230px;
 	padding: 36px;
 	border-radius: 30px;
 	background-color: var(--cl-secondary);
 	box-shadow: var(--shadow) var(--cl-secondary-glow);
-	/* motion */
 	transition: .2s ease-in-out;
 	transform: translateY(10px);
 }
-/* estados de caja */
 .floating__box:hover{
 	transform: scale(1.1);
 	transform-origin: bottom right;
 }
-/* appear */
 .floating__box-active{
 	transform: translateY(0px);
 	opacity: 1;
@@ -717,8 +545,6 @@ button a{
 	transition: .2s ease-in-out;
 }
 
-
-/* ------------------------- Mobile !!!!!!!!!!!!!! DRY */
 .mobile{
 	display: none;
 	margin: 10%;
@@ -726,16 +552,13 @@ button a{
 }
 .mobile_header{
 	height: 80px;
-	/* box */
 	border-radius: var(--border-radius);
 	background-color: var(--element-main-color);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
-	/* content */
 	padding: 0 35px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* only when scrolling */
 }
 .mobile__title{
 	margin-top: 20%;
@@ -755,12 +578,7 @@ button a{
 	margin-top: 24px;
 }
 
-
-
-/* ------------------------- Mediaquery */
-
 @media only screen and (max-device-width: 999px) {
-
 	.header,
 	.hero,
 	.sandbox,
@@ -769,13 +587,10 @@ button a{
 	.footer{
 		display: none;
 	}
-
 	.mobile{
 		display: block;
 	}
-
 	.footer--mobile{
-		/* display: none; */
 		display: inline-block;
 		width: 90%;
 		height: 300px;
@@ -783,91 +598,23 @@ button a{
 	}
 }
 
-
-
-
-/* -------------------------- Darkmode */
-
-/* ----- No funciona  */
-@media (prefers-color-scheme: dark) {
-	:root{
-		/* button font color */
-		--bt-text-color: var(--white);
-		--bt-bk-color: var(--white-a);
-
-		/* fonts */
-		--font-main-color: var(--white);
-		--font-grey: var(--grey);
-
-		/* cards */
-		--element-main-color: var(--grey-dark);
-		--element-main-color-glow: var(--grey-dark-glow);
-		/* background colors */
-
-		--bk-color: var(--black);
-		--bk-color-support: var(--grey-dark);
-	}
-
-}
-@media (prefers-color-scheme: light) {
-	:root{
-		/* button font color */
-		--bt-text-color: var(--white);
-		--bt-bk-color: var(--white);
-
-		/* fonts */
-		--font-main-color: var(--black);
-		--font-grey: var(--grey);
-
-		/* cards */
-		--element-main-color: var(--white);
-		--element-main-color-glow: var(--grey-light-glow);
-
-		/* background colors */
-		--bk-color: var(--white);
-		--bk-color-support: var(--grey-light);
-		}
-}
-
-/* ----- Funciona   */
 html[data-theme="dark"]{
-	/* button font color */
 	--bt-text-color: var(--white);
 	--bt-bk-color: var(--white-a);
-
-	/* fonts */
 	--font-main-color: var(--white);
 	--font-grey: var(--grey);
-
-	/* cards */
 	--element-main-color: var(--grey-dark);
 	--element-main-color-glow: var(--grey-dark-glow);
-	/* background colors */
-
 	--bk-color: var(--black);
 	--bk-color-support: var(--grey-dark);
 }
 html[data-theme="light"]{
-	/* button font color */
 	--bt-text-color: var(--white);
 	--bt-bk-color: var(--white);
-
-	/* fonts */
 	--font-main-color: var(--black);
 	--font-grey: var(--grey);
-
-	/* cards */
 	--element-main-color: var(--white);
 	--element-main-color-glow: var(--grey-light-glow);
-
-	/* background colors */
 	--bk-color: var(--white);
 	--bk-color-support: var(--grey-light);
 }
-
-
-
-/* -------------------------- Motion */
-/* .transition{
-
-} */
