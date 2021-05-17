@@ -81,7 +81,7 @@ function seeProjects() {
 		shell_gallery_card.innerHTML =
 			'<div class="gallery__card-title">' /* + projects[project].id + '. '*/ + projects[project].name + '</div>'
 			+ '<div class="gallery__card-buttons">'
-			+ '<button class="gallery__card-play btn--s" id="'+projects[project].id+'">Play</button>'
+			+ '<button class="gallery__card-play btn--s" id="'+projects[project].id+'" onClick="playOnSandbox(this.id)">Play</button>'
 			+ '<button class="gallery__card-modal btn--s btn--white" id="'+projects[project].id+'" onClick="defineModal(this.id)">More info</button> '
 			+ '</div>';
 		gallery.prepend(shell_gallery_card);
@@ -176,6 +176,9 @@ sandbox_random.addEventListener('click', randomProject);
 
 // --------------------- Shell sandbox ❌
 
+function playOnSandbox(id){
+	console.log(id);
+}
 
 
 
