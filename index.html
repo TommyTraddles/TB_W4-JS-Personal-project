@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en" data-theme="light">
 
 <head>
 	<meta charset="UTF-8">
@@ -13,28 +13,18 @@
 <body>
 	<!-- --------------------------- Header -->
 	<header class="header">
-		<!-- logo -->
 		<div class="header__logo">
 			<img class="header__logo-image" src="/assets/logo-color.svg" alt="logo">
 			<span class="header__logo-text"> sandbox </span>
 		</div>
-		<!-- switcher -->
 		<div class="header__switcher">
-			<span>
-				late owl
-			</span>
-
+			<span> 🌘 </span>
 			<label class="header__switcher-toggle">
-				<input type="checkbox" checked>  <span class="header__switcher-toggle-slider"></span>
+				<input class="header__switcher-toggle-switcher" type="checkbox" name="theme" checked> <span
+					class="header__switcher-toggle-slider"></span>
 			</label>
-
-			<span>
-				early bird
-			</span>
+			<span> 🌞 </span>
 		</div>
-
-
-
 	</header>
 
 	<!-- --------------------------- Hero -->
@@ -56,7 +46,7 @@
 	<!-- --------------------------- Sandbox -->
 	<section class="sandbox">
 		<div class="sandbox__legend">
-			see your <br> selected <br> project <br> here:
+			see your selected <br> project here:
 		</div>
 		<div class="sandbox__iframe">
 			<iframe src="https://tommytraddles.github.io/TB_W3-JS_4-Quiz/"></iframe>
@@ -118,6 +108,9 @@
 			</div>
 		</div>
 
+
+
+		
 		<div class="gallery__card-empty">
 			<p>
 				<strong>want to see more?</strong>
@@ -160,24 +153,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal__overlay"></div>
 	</section>
 
-	<!-- --------------------------- Mobile !!!!!!!!!!!!!!!!!!!!  -->
+
+
+	<!-- --------------------------- Mobile DRY !!!!!!!!!!!!!!!!!!!!  -->
 	<section class="mobile">
-		<!-- header -->
 		<div class="mobile_header">
 			<div>
 				<img class="header__logo-image" src="/assets/logo-color.svg" alt="logo">
 				<span class="header__logo-text"> sandbox </span>
 			</div>
-			<div class="header__switcher">
-				<label class="header__switcher-toggle">
-					<input type="checkbox" checked>  <span class="header__switcher-toggle-slider"></span>
-				</label>
-			</div>
 		</div>
-
-		<!-- body -->
 		<div class="mobile__title">
 			We get it, <br> you prefer being mobile.
 		</div>
@@ -187,8 +175,6 @@
 		<div class="mobile__button">
 			<button class="blame__button"> See who’s to blame</button>
 		</div>
-
-		<!-- footer -->
 		<div class="footer__card footer--mobile">
 			<div class="modal__close">
 				<img src="/assets/logo-blue-x.svg" alt="">
@@ -212,13 +198,10 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 
-	<!-- --------------------------- Footer  !!!!!!!!!!!!!!!!!!!!!  -->
+	<!-- --------------------------- Footer  ORDEN !!!!!!!!!!!!!!!!!!!!!  -->
 	<footer class="footer">
-
-		<!-- --------------------------- Blame  -->
 		<section class="blame">
 			<div class="blame__title">
 				Need help <br> getting around?
@@ -227,8 +210,6 @@
 				<button class="btn--white-always">See who’s to blame</button>
 			</div>
 		</section>
-
-		<!-- --------------------------- Footer  -->
 		<div class="footer__card-container">
 			<!-- card -->
 			<div class="footer__card">
@@ -267,20 +248,15 @@
 
 	<!-- --------------------------- Botón flotante -->
 	<section class="floating">
-		<!-- message -->
 		<div class="floating__box">
 			<div class="floating__box-message">
-				<p>Well, hi 👋.</p>
+				<p>Well, hi <span>👋</span>.</p>
 			</div>
 		</div>
-
-		<!-- button -->
 		<div class="floating__button">
 			<img src="/assets/logo-blue.svg" alt="">
 		</div>
 	</section>
-
-
 
 
 	<!-- script -->

@@ -16,13 +16,13 @@
 	--white-a: #ffffff00;
 	--grey-light:  #f5f6fc;
 	--grey-light-glow: #EFF0F7;
-
 	--grey: #9799B1; 	
-
 	--grey-dark: #1D1E1F;
 	--grey-dark-glow: #0d0d0d;
 	--black: #141415;
 	
+
+
 	/* font size */
 	--fs-1-hero: 80px;
 	--fs-2-project-title: 60px;
@@ -77,7 +77,6 @@
 --bk-color: var(--white);
 --bk-color-support: var(--grey-light);
 
-
 }
 
 
@@ -86,34 +85,21 @@
 
 
 
+
 /* 1) See modal */
 .modal{
-	display: none;
+	/* display: none; */
 }
-
-/* 2) Floating button */
-.floating__box{
-	display: none;
-}
-
-
-/* 3) Dark-light theme */
-/* Preferencias de sistema */
-
-
-/* 4) Dark-light toggle */
-/* HTML */
 
 
 /* 5) Main color change */
 /* copy + paste :root */
 
 
-/* 6) Header Sticky */
-
 
 /* 7) HTML Description change */
 /* HTML */
+
 
 
 /* 8) Creación de cards (js) */
@@ -125,7 +111,9 @@
 }
 
 
+/* Onboarding */
 
+/* Animaciones */
 
 
 
@@ -169,6 +157,17 @@ button{
 button:hover{
 	box-shadow: var(--shadow) var(--cl-main-glow);
 }
+/* añadir hand al hacer hover */
+/* button:hover::after{
+	opacity: 1;
+	content: " 👋";
+} */
+/* añadir estado al botón */
+button:active{
+	/* background-color: transparent(var(--cl-main), 0.1); */
+	/* background-color: darken(var(--cl-secondary), 10%); */
+	background-color: var(--cl-secondary);
+}
 .btn--s{
 	width: var(--btn-2-width);
 	height: var(--btn-2-heigh);
@@ -194,26 +193,32 @@ button:hover{
 
 
 /* ------------------------- Header */
+
+/* HEADER */
+
 .header{
-	width: 1100px;
-	height: 70px;
-	margin: auto;
-	margin-top: 35px;
-	padding-left: 50px;
-	padding-right: 50px;
 	/* box */
+	width: 1200px;
+	height: 70px;
 	border-radius: var(--border-radius);
+	/* margin: auto; */
+	margin-top: 35px;
+	padding: 0 100px;
 	/* content */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* only when scrolling */
-	/* position: fixed;
-	top: 25px;
-	z-index: 9; */
+	/* sticky */
+	position: fixed;
+	top: 15px;
+	right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+	z-index: 9;
 }
-.header:hover{
-	/* only when scrolling */
+/* al hacer scroll */
+.sticky{
 	background-color: var(--element-main-color);
 	box-shadow: var(--shadow) var(--element-main-color-glow);
 }
@@ -230,6 +235,9 @@ button:hover{
 	font-weight: var(--fw-bold);
 }
 
+/* DARK MODE */
+
+/* contenedor completo */
 .header__switcher{
 	color: var(--font-main-color);
 	font-size: var(--fs-6-button);
@@ -237,6 +245,7 @@ button:hover{
 	display: flex;
 	align-items: center;
 }
+/* solo swticher */
 .header__switcher-toggle{
 	position: relative;
 	display: inline-block;
@@ -244,11 +253,13 @@ button:hover{
 	height: 34px;
 	margin: 0 16px;
 }
+/* hide checkbox */
 .header__switcher-toggle input{
 	opacity: 0;
 	width: 0;
 	height: 0;
 }
+/* base del slider */
 .header__switcher-toggle-slider{
 	position: absolute;
 	cursor: pointer;
@@ -256,13 +267,15 @@ button:hover{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border-radius: var(--border-radius);
-	background: var(--rose);
-	transition: .4s;
+	border-radius: 100px;
+	/* border: 1px solid var(--element-main-color-glow); */
+	background: var(--element-main-color-glow);
+	transition: .5s;
 }
 .header__switcher-toggle-slider:hover{
 	box-shadow: var(--shadow) var(--cl-main-glow);
 }
+/* pseudo botón */
 .header__switcher-toggle-slider:before{
 	position: absolute;
 	content: "";
@@ -270,10 +283,11 @@ button:hover{
 	width: 26px;
 	left: 4px;
 	bottom: 4px;
-	border-radius: var(--border-radius);
+	border-radius: 100px;
 	background-color: var(--cl-main);
-	transition: .4s;
+	transition: .5s;
 }
+/* Motion when clicked*/
 .header__switcher-toggle input:checked +
 .header__switcher-toggle-slider:before{
 	transform: translateX(26px);
@@ -286,8 +300,7 @@ button:hover{
 	border: 1px solid green;
 } */
 .hero__title{
-	margin: 120px 0 16px 0;
-	/* margin: 200px 0 16px 0; */
+	margin: 200px 0 16px 0;
 	color: var(--font-main-color);
 	font-size: var(--fs-1-hero);
 	font-weight: var(--fw-bold);
@@ -327,8 +340,8 @@ button:hover{
 	font-size: var(--fs-3-legend);
 	font-weight: var(--fw-bold);
 	position: absolute;
-	top: -80px;
-  right: 200px;
+	top: -50px;
+	right: 100px;
 }
 .sandbox__name{
 	color: var(--cl-main-glow);
@@ -416,21 +429,69 @@ button:hover{
 /* ------------------------- Modal */
 
 .modal{
+	
+}
+
+/* black overlay */
+.modal__overlay{
+	/* display */
+	display: none;
+	/* position */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	/* box */
+	width: 100vw;
+	height: 100vh;
+	background: var(--black);
+	/* style */
+	opacity: 0.5;
+}
+.modal__overlay--active{
+	display: block;
+}
+/* container */
+.modal__container{
+	/* display */
+	display: none;
+	/* position */
+	position: fixed;
+	top: 20vh;
+	left: 0;
+	right: 0;
+	margin-right: auto;
+    margin-left: auto;
+	z-index: 9;
+	/* box */
 	width: 1000px;
-  height: 700px;
-  padding: 60px;
+	height: 700px;
+	padding: 60px;
 	margin: auto;
 	margin-bottom: 70px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--element-main-color-glow);
-  background-color: var(--element-main-color);
+	/* style */
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+	background-color: var(--element-main-color);
+	/* motion */
+	transition: .5s ease-in-out;
+	transform: translateY(50px);
+	opacity: .8
 }
-.modal__container{
+.modal__container--active{
+	display: block;
+	transform: translateY(0px);
+	opacity: 1;
+}
 
-}
 .modal__close{
 	display: flex;
 	justify-content: flex-end;
+	cursor: pointer;
+}
+.modal__close img:hover{
+	transition: .5s ease-in-out;
+	transform: rotate(45deg);
 }
 .modal__info{
 	margin-top: 100px;
@@ -442,6 +503,7 @@ button:hover{
 }
 .modal__info-title > p:hover{
 	text-decoration: underline;
+	cursor: pointer;
 }
 .modal__info-badges > span{
 	display: inline-block;
@@ -492,6 +554,7 @@ button:hover{
 	width: 110px;
 	text-align: center;
 }
+
 
 
 
@@ -620,16 +683,19 @@ button:hover{
 
 
 /* ------------------------- Botón flotante */
+
+/* BOTÓN */
+
 .floating{
-	/* position: fixed;
-	bottom: 15px;
-	right: 15px; */
+	position: absolute;
+	z-index: 9;
 }
 .floating__button{
 	/* position */
 	position: fixed;
 	bottom: 70px;
 	right: 55px;
+	cursor: pointer;
 	/* box */
 	width: 90px;
 	height: 90px;
@@ -640,30 +706,57 @@ button:hover{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	/* motion */
+	transition: .2s ease-in-out;
 }
+/* estados de botón */
+.floating__button:hover{
+	transform: scale(1.1);
+}
+.floating__button:active{
+	background-color: var(--cl-secondary-glow);
+}
+
+/* CAJA */
+
 .floating__box{
+	/* view */
+	opacity: 0;
 	/* position */
 	position: fixed;
 	bottom: 175px;
 	right: 55px;
 	/* box */
-  width: 300px;
-  height: 230px;
-  padding: 36px;
-  border-radius: 30px;
+	width: 300px;
+	height: 230px;
+	padding: 36px;
+	border-radius: 30px;
 	background-color: var(--cl-secondary);
 	box-shadow: var(--shadow) var(--cl-secondary-glow);
+	/* motion */
+	transition: .2s ease-in-out;
+	transform: translateY(10px);
+}
+/* estados de caja */
+.floating__box:hover{
+	transform: scale(1.1);
+	transform-origin: bottom right;
+}
+/* appear */
+.floating__box-active{
+	transform: translateY(0px);
+	opacity: 1;
 }
 .floating__box-message{
 	width: 100px;
 	font-size: var(--fs-4-titles);
 	font-weight: var(--fw-bold);
 	color: var(--bt-text-color);
+	transition: .2s ease-in-out;
 }
 
 
-
-/* ------------------------- Mobile */
+/* ------------------------- Mobile !!!!!!!!!!!!!! DRY */
 .mobile{
 	display: none;
 	margin: 10%;
@@ -678,7 +771,7 @@ button:hover{
 	/* content */
 	padding: 0 35px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	/* only when scrolling */
 }
@@ -730,7 +823,10 @@ button:hover{
 
 
 
+
 /* -------------------------- Darkmode */
+
+/* ----- No funciona  */
 @media (prefers-color-scheme: dark) {
 	:root{
 		/* button font color */
@@ -770,6 +866,8 @@ button:hover{
 		--bk-color-support: var(--grey-light);
 		}
 }
+
+/* ----- Funciona   */
 html[data-theme="dark"]{
 	/* button font color */
 	--bt-text-color: var(--white);
@@ -786,6 +884,23 @@ html[data-theme="dark"]{
 
 	--bk-color: var(--black);
 	--bk-color-support: var(--grey-dark);
+}
+html[data-theme="light"]{
+	/* button font color */
+	--bt-text-color: var(--white);
+	--bt-bk-color: var(--white);
+
+	/* fonts */
+	--font-main-color: var(--black);
+	--font-grey: var(--grey);
+
+	/* cards */
+	--element-main-color: var(--white);
+	--element-main-color-glow: var(--grey-light-glow);
+
+	/* background colors */
+	--bk-color: var(--white);
+	--bk-color-support: var(--grey-light);
 }
 
 
