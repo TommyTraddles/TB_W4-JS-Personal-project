@@ -110,7 +110,7 @@ button{
 	cursor: pointer;
 	/* color */
 	background-color: var(--cl-main);
-	color: var(--bt-text-color); /* -----------*/
+	color: var(--bt-text-color);
 	/* font */
 	font-size: var(--fs-6-button);
 	font-weight: var(--fw-bold);
@@ -128,6 +128,10 @@ button:active{
 	/* background-color: transparent(var(--cl-main), 0.1); */
 	/* background-color: darken(var(--cl-secondary), 10%); */
 	background-color: var(--cl-main-glow);
+}
+button a{
+	color: var(--bt-text-color);
+	text-decoration: none;
 }
 .btn--s{
 	width: var(--btn-2-width);

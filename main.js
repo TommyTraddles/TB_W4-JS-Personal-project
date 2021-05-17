@@ -81,7 +81,7 @@ function seeProjects() {
 		shell_gallery_card.innerHTML =
 			'<div class="gallery__card-title">' /* + projects[project].id + '. '*/ + projects[project].name + '</div>'
 			+ '<div class="gallery__card-buttons">'
-			+ '<button class="gallery__card-play btn--s" id="'+projects[project].id+'" onClick="playOnSandbox(this.id)">Play</button>'
+			+ '<button class="gallery__card-play btn--s" id="'+projects[project].id+'" onClick="playOnSandbox(this.id)"><a href="#sandbox">Play</a></button>'
 			+ '<button class="gallery__card-modal btn--s btn--white" id="'+projects[project].id+'" onClick="defineModal(this.id)">More info</button> '
 			+ '</div>';
 		gallery.prepend(shell_gallery_card);
@@ -174,11 +174,15 @@ sandbox_random.addEventListener('click', randomProject);
 
 
 
-// --------------------- Shell sandbox ❌
+// --------------------- Shell sandbox ✅
 
 function playOnSandbox(id){
-	console.log(id);
+	let shell_sandbox_url = '<iframe src="' + projects[id-1].urlProd + '"></iframe>'
+	let shell_sandbox_name = '<p>' + projects[id-1].name + '</p>'
+	sandbox_url.innerHTML = shell_sandbox_url;
+	sandbox_name.innerHTML = shell_sandbox_name;
 }
+
 
 
 
@@ -236,4 +240,11 @@ floating_button.addEventListener('click', openFab);
 
 
 
+// --------------------- Listado de pendientes ❌
+
+/**
+ * Mobile: popup
+ * 
+ * 
+ */
 
