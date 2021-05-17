@@ -128,8 +128,7 @@ modal_container.appendChild(shell_modal_card);
 */
 
 
-// let values = projects[index].tags.forEach()
-
+	// let values = projects[index].tags.forEach()
 	// console.log(projects[id].tags[0]);
 
 	let value = 0;
