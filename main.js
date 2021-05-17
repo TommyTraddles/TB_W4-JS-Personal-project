@@ -104,10 +104,6 @@ const modal_info = document.querySelector('.modal__info');
 const modal_close = document.querySelector('.modal__close');
 const modal_overlay = document.querySelector('.modal__overlay');
 const gallery_card_title = document.querySelector('.gallery__card-title');
-
-
-
-
 function defineModal(id) {
 	let shell_modal_card = document.createElement('div');
 	shell_modal_card.className = 'modal__info';
@@ -123,15 +119,10 @@ function defineModal(id) {
 	modal_container.appendChild(shell_modal_card); /* anunca deja de aparcer objeto  */
 	openModal()
 }
-
-
-// abrir y cerrar ✅
 function openModal() {
 	modal_container.classList.add('modal__container--active');
 	modal_overlay.classList.add('modal__overlay--active');
 };
-
-
 function closeModal() {
 	modal_container.classList.remove('modal__container--active');
 	modal_overlay.classList.remove('modal__overlay--active');
@@ -139,8 +130,6 @@ function closeModal() {
 	let modal_info = document.querySelector('.modal__info');
 	modal_container.removeChild(modal_info);
 };
-
-
 // gallery_card_modal.forEach(selector => {
 // 	selector.addEventListener('click', defineModal);
 // });
