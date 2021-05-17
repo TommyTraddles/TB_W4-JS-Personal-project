@@ -379,20 +379,18 @@ button:active{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-}
-.gallery__cards{
 
 }
 .gallery__card{
 	/* style */
-  width: 30%;
-  height: 425px;
-  padding: 36px 24px;
+	width: 30%;
+	height: 425px;
+	padding: 36px 24px;
 	margin-bottom: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow) var(--element-main-color-glow);
-  background-color: var(--element-main-color);
-	/* content */
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow) var(--element-main-color-glow);
+	background-color: var(--element-main-color);
+	  /* content */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -415,8 +413,8 @@ button:active{
 .gallery__card-empty{
 	/* position */
 	width: 30%;
-  height: 425px;
-  padding: 20px;
+	height: 425px;
+	padding: 20px;
 	margin: 0 10px 40px;
 	/* style */
 	color: var(--font-grey);

@@ -65,26 +65,19 @@ let projects = [
 
 // -------------------- Selectores -------------------
 // sticky header
-const header = document.querySelector('.header');
+
 // dark theme
-const switcher_toggle = document.querySelector('.header__switcher-toggle-switcher');
+
 // Fab
-const floating_button = document.querySelector('.floating__button');
-const floating_box = document.querySelector('.floating__box');
+
 // Modal
-const gallery_card_modal = document.querySelectorAll('.gallery__card-modal');
-const modal_overlay = document.querySelector('.modal__overlay');
-const modal_container = document.querySelector('.modal__container');
-const modal_close= document.querySelector('.modal__close');
+
 // random sandbox
 const sandbox_random = document.querySelector('.sandbox__buton');
 const sandbox_url = document.querySelector('.sandbox__iframe');
 const sandbox_name = document.querySelector('.sandbox__name');
 // Shell card
-const gallery = document.querySelector(".gallery");
-const gallery_card = document.querySelector(".gallery__card");
-const gallery_card_title = document.querySelector('.gallery__card-title');
-const gallery_card_play = document.querySelector('.gallery__card-play');
+
 // Shell modal
 const modal_info_title = document.querySelector('.modal__info-title');// and urk
 const modal_info_badges = document.querySelector('.modal__info-badges');
@@ -93,16 +86,30 @@ const modal_info_kpi = document.querySelector('.modal__info-kpi'); // tres valor
 
 
 
+
+
+
+
+
 // -------------------- Funciones --------------------
 
 
+
+
+
 // --------------------- Shell card
+const gallery = document.querySelector(".gallery");
+const gallery_card = document.querySelector(".gallery__card");
+const gallery_card_title = document.querySelector('.gallery__card-title');
+const gallery_card_play = document.querySelector('.gallery__card-play');
+
 function seeProjects (){
 	console.log('> Funcionan los shell')
 
 	for (const project in projects) {
 		
 	
+		/*
 		let gallery = document.createElement('div');
 		shell_gallery_card.className = 'gallery__card';
 		
@@ -112,31 +119,40 @@ function seeProjects (){
 		+ '<button class="gallery__card-modal btn--s btn--white">Learn more</button> '
 		+'</div>';
 		
-		
 		gallery_card.appendChild = shell_gallery_card;
+		*/
 
-
-
-
-
-
-		// let shell_gallery_card = '<div class="gallery__card-title">' + projects[project].name + '</div>'
-		// + '<div class="gallery__card-buttons">'
-		// + '<button class="gallery__card-play btn--s">Play</button>'
-		// + '<button class="gallery__card-modal btn--s btn--white">'+ 'Learn more'+'</button> '
-		// +'</div></div>';
-		// gallery_card.innerHTML = shell_gallery_card;
+		let shell_gallery_card = '<div class="gallery__card-title">' + projects[project].name + '</div>'
+		+ '<div class="gallery__card-buttons">'
+		+ '<button class="gallery__card-play btn--s">Play</button>'
+		+ '<button class="gallery__card-modal btn--s btn--white">'+ 'Learn more'+'</button> '
+		+'</div></div>';
+		gallery_card.innerHTML = shell_gallery_card;
 		
 	};
 };
 
 
 
+
+
+
+
+
+
 // -------------------- Sticky header
+const header = document.querySelector('.header');
 function stickyHeader(){
 	header.classList.toggle('sticky', window.scrollY > 0);
 }
+
+
+
+
+
+
 // -------------------- Dark theme
+const switcher_toggle = document.querySelector('.header__switcher-toggle-switcher');
 function switchTheme() {
 	if (switcher_toggle.checked) {
 		document.documentElement.setAttribute('data-theme', 'light')
@@ -144,11 +160,29 @@ function switchTheme() {
 		document.documentElement.setAttribute('data-theme', 'dark')
 	}
 };
+
+
+
+
+
+
 // -------------------- Fab
+const floating_button = document.querySelector('.floating__button');
+const floating_box = document.querySelector('.floating__box');
 function openFab() {
 	floating_box.classList.toggle('floating__box-active')
 };
+
+
+
+
+
+
 // -------------------- Modal 
+const gallery_card_modal = document.querySelectorAll('.gallery__card-modal');
+const modal_overlay = document.querySelector('.modal__overlay');
+const modal_container = document.querySelector('.modal__container');
+const modal_close= document.querySelector('.modal__close');
 function openModal(){
 	console.log('> Funciona el botón modal')
 	modal_container.classList.add('modal__container--active');
@@ -159,8 +193,6 @@ function closeModal(){
 	modal_overlay.classList.remove('modal__overlay--active');
 };
 
-
-	
 
 
 
