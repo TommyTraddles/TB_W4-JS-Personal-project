@@ -63,6 +63,12 @@ let projects = [
 	}
 ];
 
+
+
+
+
+
+
 // --------------------- Shell card
 const gallery = document.querySelector(".gallery");
 function seeProjects (){
@@ -80,17 +86,23 @@ function seeProjects (){
 seeProjects();
 
 
-// random sandbox
-const sandbox_random = document.querySelector('.sandbox__buton');
+
+
+
+
+
+// --------------------- Shell sandbox
 const sandbox_url = document.querySelector('.sandbox__iframe');
 const sandbox_name = document.querySelector('.sandbox__name');
-// Shell card
 
-// Shell modal
-const modal_info_title = document.querySelector('.modal__info-title');// and urk
-const modal_info_badges = document.querySelector('.modal__info-badges');
-// const modal_info_description = documentElement.querySelector('.modal__info-desc');
-const modal_info_kpi = document.querySelector('.modal__info-kpi'); // tres valores
+
+
+
+
+
+
+// --------------------- Random project
+const sandbox_random = document.querySelector('.sandbox__buton');
 
 
 
@@ -104,6 +116,8 @@ function stickyHeader(){
 	header.classList.toggle('sticky', window.scrollY > 0);
 }
 window.addEventListener('scroll', stickyHeader)
+
+
 
 
 
@@ -125,6 +139,7 @@ switcher_toggle.addEventListener('click', switchTheme);
 
 
 
+
 // -------------------- Fab
 const floating_button = document.querySelector('.floating__button');
 const floating_box = document.querySelector('.floating__box');
@@ -132,9 +147,6 @@ function openFab() {
 	floating_box.classList.toggle('floating__box-active')
 };
 floating_button.addEventListener('click', openFab);
-
-
-
 
 
 
@@ -167,6 +179,10 @@ modal_close.addEventListener('click', closeModal);
 
 
 
-
-
+// --------------------- Shell modal
+// Shell modal
+const modal_info_title = document.querySelector('.modal__info-title');// and urk
+const modal_info_badges = document.querySelector('.modal__info-badges');
+// const modal_info_description = documentElement.querySelector('.modal__info-desc');
+const modal_info_kpi = document.querySelector('.modal__info-kpi'); // tres valores
 
