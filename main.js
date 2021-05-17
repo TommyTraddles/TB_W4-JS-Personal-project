@@ -1,7 +1,7 @@
 'use strict'
 
-// -------------------- Objeto -----------------------
 
+// --------------------- Objeto
 let projects = [
 	{
 		id: 1,
@@ -63,14 +63,22 @@ let projects = [
 	}
 ];
 
-// -------------------- Selectores -------------------
-// sticky header
+// --------------------- Shell card
+const gallery = document.querySelector(".gallery");
+function seeProjects (){
+	for (const project in projects) {
+		const shell_gallery_card = document.createElement('div');
+		shell_gallery_card.className = 'gallery__card';
+		shell_gallery_card.innerHTML = '<div class="gallery__card-title">' + projects[project].name + '</div>'
+		+ '<div class="gallery__card-buttons">'
+		+ '<button class="gallery__card-play btn--s">Play</button>'
+		+ '<button class="gallery__card-modal btn--s btn--white">Learn more</button> '
+		+'</div>';
+		gallery.prepend(shell_gallery_card);
+	};
+};
+seeProjects();
 
-// dark theme
-
-// Fab
-
-// Modal
 
 // random sandbox
 const sandbox_random = document.querySelector('.sandbox__buton');
@@ -90,62 +98,12 @@ const modal_info_kpi = document.querySelector('.modal__info-kpi'); // tres valor
 
 
 
-
-// -------------------- Funciones --------------------
-
-
-
-
-
-// --------------------- Shell card
-const gallery = document.querySelector(".gallery");
-const gallery_card = document.querySelector(".gallery__card");
-const gallery_card_title = document.querySelector('.gallery__card-title');
-const gallery_card_play = document.querySelector('.gallery__card-play');
-
-function seeProjects (){
-	console.log('> Funcionan los shell')
-
-	for (const project in projects) {
-		
-	
-		/*
-		let gallery = document.createElement('div');
-		shell_gallery_card.className = 'gallery__card';
-		
-		shell_gallery_card.innerHTML = '<div class="gallery__card-title">' + projects[project].name + '</div>'
-		+ '<div class="gallery__card-buttons">'
-		+ '<button class="gallery__card-play btn--s">Play</button>'
-		+ '<button class="gallery__card-modal btn--s btn--white">Learn more</button> '
-		+'</div>';
-		
-		gallery_card.appendChild = shell_gallery_card;
-		*/
-
-		let shell_gallery_card = '<div class="gallery__card-title">' + projects[project].name + '</div>'
-		+ '<div class="gallery__card-buttons">'
-		+ '<button class="gallery__card-play btn--s">Play</button>'
-		+ '<button class="gallery__card-modal btn--s btn--white">'+ 'Learn more'+'</button> '
-		+'</div></div>';
-		gallery_card.innerHTML = shell_gallery_card;
-		
-	};
-};
-
-
-
-
-
-
-
-
-
 // -------------------- Sticky header
 const header = document.querySelector('.header');
 function stickyHeader(){
 	header.classList.toggle('sticky', window.scrollY > 0);
 }
-
+window.addEventListener('scroll', stickyHeader)
 
 
 
@@ -160,6 +118,7 @@ function switchTheme() {
 		document.documentElement.setAttribute('data-theme', 'dark')
 	}
 };
+switcher_toggle.addEventListener('click', switchTheme);
 
 
 
@@ -172,6 +131,11 @@ const floating_box = document.querySelector('.floating__box');
 function openFab() {
 	floating_box.classList.toggle('floating__box-active')
 };
+floating_button.addEventListener('click', openFab);
+
+
+
+
 
 
 
@@ -192,24 +156,17 @@ function closeModal(){
 	modal_container.classList.remove('modal__container--active');
 	modal_overlay.classList.remove('modal__overlay--active');
 };
-
-
-
-
-
-// -------------------- Eventos ---------------------
-
-
-// sticky
-window.addEventListener('scroll', stickyHeader)
-// dark
-switcher_toggle.addEventListener('click', switchTheme);
-// Fab
-floating_button.addEventListener('click', openFab);
-// Modal
 gallery_card_modal.forEach(selector => {
 	selector.addEventListener('click', openModal);
 }); 
 modal_close.addEventListener('click', closeModal);
-// Shell projects
-seeProjects();
+
+
+
+
+
+
+
+
+
+

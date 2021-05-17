@@ -166,7 +166,7 @@ button:hover{
 button:active{
 	/* background-color: transparent(var(--cl-main), 0.1); */
 	/* background-color: darken(var(--cl-secondary), 10%); */
-	background-color: var(--cl-secondary);
+	background-color: var(--cl-main-glow);
 }
 .btn--s{
 	width: var(--btn-2-width);
@@ -180,6 +180,9 @@ button:active{
 .btn--white:hover{
 	color: var(--font-grey);
 	box-shadow: none;
+}
+.btn--white:active{
+	background-color: var(--element-main-color-glow);
 }
 .btn--white-always{
 	background-color: white;
