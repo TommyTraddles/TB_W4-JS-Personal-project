@@ -109,14 +109,38 @@ function defineModal(id) {
 	shell_modal_card.className = 'modal__info';
 	shell_modal_card.innerHTML =
 		'<div class="modal__info-title""> <a href="' + projects[id-1].urlRepo + '" target="_blank"> ' + projects[id-1].name + ' 🔗 </a> </div>'
-		+ '<div class="modal__info-badges"> <span> ' + projects[id-1].tags[0] + ' </span> </span></div>' /* for each tag ❌ */
+		+ '<div class="modal__info-badges"> <span> ' + projects[id-1].tags[0] + ' </span> </span></div>'
 		+ '<div class="modal__info-desc"> <p> ' + projects[id-1].description + ' </p> </div>'
 		+ '<div class="modal__info-kpi">'
 		+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id-1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
 		+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id-1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
 		+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id-1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
 		+ '</div>';
-	modal_container.appendChild(shell_modal_card); /* anunca deja de aparcer objeto  */
+	modal_container.appendChild(shell_modal_card);
+
+	/*
+	let shell_modal_card = document.createElement('div');
+	shell_modal_card.className = 'modal__info';
+	shell_modal_card.innerHTML =
+		'<div class="modal__info-title""> <a href="' + projects[id-1].urlRepo + '" target="_blank"> ' + projects[id-1].name + ' 🔗 </a> </div>'
+		+ '<div class="modal__info-badges"> <span> ' + 
+
+		for (const iterator of object) {
+			
+		}
+
+		projects[id-1].tags[0] 
+
+		+ ' </span> </span></div>'
+		+ '<div class="modal__info-desc"> <p> ' + projects[id-1].description + ' </p> </div>'
+		+ '<div class="modal__info-kpi">'
+		+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id-1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
+		+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id-1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
+		+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id-1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
+		+ '</div>';
+	modal_container.appendChild(shell_modal_card);
+		*/
+
 	openModal()
 }
 function openModal() {
