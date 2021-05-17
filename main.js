@@ -81,8 +81,8 @@ function seeProjects() {
 		shell_gallery_card.innerHTML =
 			'<div class="gallery__card-title">' /* + projects[project].id + '. '*/ + projects[project].name + '</div>'
 			+ '<div class="gallery__card-buttons">'
-			+ '<button class="gallery__card-play btn--s" id="'+projects[project].id+'" onClick="playOnSandbox(this.id)"><a href="#sandbox">Play</a></button>'
-			+ '<button class="gallery__card-modal btn--s btn--white" id="'+projects[project].id+'" onClick="defineModal(this.id)">More info</button> '
+			+ '<button class="gallery__card-play btn--s" id="' + projects[project].id + '" onClick="playOnSandbox(this.id)"><a href="#sandbox">Play</a></button>'
+			+ '<button class="gallery__card-modal btn--s btn--white" id="' + projects[project].id + '" onClick="defineModal(this.id)">More info</button> '
 			+ '</div>';
 		gallery.prepend(shell_gallery_card);
 	};
@@ -131,28 +131,50 @@ modal_container.appendChild(shell_modal_card);
 	// let values = projects[index].tags.forEach()
 	// console.log(projects[id].tags[0]);
 
-	let value = 0;
-	let shell_modal_info_tags = '<span>'+ value +'</span>';
+	let group_tag = [ ];
+
+
+/*
+	for (const tech in projects) {
+		let shell_modal_info_tags;
+		let tag_print = projects[id-1].tags[tech];
+		// console.log('> ' + tag_print);
+		shell_modal_info_tags = '<span>' + tag_print + '</span>';
+		// console.log(shell_modal_info_tags);
+		group_tag.push(shell_modal_info_tags);
+		// console.log(group_tag);
+	}
+ */
+
+
+	for (let i = 0; i < projects[id-1].tags.length; i++) {
+		let shell_modal_info_tags;
+		let tag_print = projects[id-1].tags[i];
+		shell_modal_info_tags = '<span>' + tag_print + '</span>';
+		group_tag.push(shell_modal_info_tags);
+	}
 
 
 
-let shell_modal_card = document.createElement('div');
-shell_modal_card.className = 'modal__info';
-shell_modal_card.innerHTML =
-	' <div class="modal__info-title""> <a href="' + projects[id-1].urlRepo + '" target="_blank"> ' + projects[id-1].name + ' 🔗 </a> </div>'
+	let shell_modal_card = document.createElement('div');
+	shell_modal_card.className = 'modal__info';
+	shell_modal_card.innerHTML =
+	' <div class="modal__info-title""> <a href="' + projects[id - 1].urlRepo + '" target="_blank"> ' + projects[id - 1].name + ' 🔗 </a> </div>'
 	+ '<div class="modal__info-badges">'
-	+ shell_modal_info_tags
+	+ group_tag
 	+ '</div>'
-	+ '<div class="modal__info-desc"> <p> ' + projects[id-1].description + ' </p> </div>'
+	+ '<div class="modal__info-desc"> <p> ' + projects[id - 1].description + ' </p> </div>'
 	+ '<div class="modal__info-kpi">'
-	+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id-1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
-	+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id-1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
-	+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id-1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
+	+ '<div class="modal__info-kpi-hours"><div class="--number"> ' + projects[id - 1].kpiHour + ' </div><div class="--footnote">hours</div></div>'
+	+ '<div class="modal__info-kpi-lines"><div class="--number"> ' + projects[id - 1].kpiLines + ' </div><div class="--footnote">commented lines of code</div></div>'
+	+ '<div class="modal__info-kpi-weight"><div class="--number"> ' + projects[id - 1].kpiWeigth + ' </div><div class="--footnote">file weight</div></div>'
 	+ '</div>';
-modal_container.appendChild(shell_modal_card);
+	modal_container.appendChild(shell_modal_card);
 
 	openModal()
 }
+
+
 function openModal() {
 	modal_container.classList.add('modal__container--active');
 	modal_overlay.classList.add('modal__overlay--active');
@@ -199,9 +221,9 @@ sandbox_random.addEventListener('click', randomProject);
 
 // --------------------- Shell sandbox ✅
 
-function playOnSandbox(id){
-	let shell_sandbox_url = '<iframe src="' + projects[id-1].urlProd + '"></iframe>'
-	let shell_sandbox_name = '<p>' + projects[id-1].name + '</p>'
+function playOnSandbox(id) {
+	let shell_sandbox_url = '<iframe src="' + projects[id - 1].urlProd + '"></iframe>'
+	let shell_sandbox_name = '<p>' + projects[id - 1].name + '</p>'
 	sandbox_url.innerHTML = shell_sandbox_url;
 	sandbox_name.innerHTML = shell_sandbox_name;
 }
